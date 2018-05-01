@@ -41,5 +41,6 @@ int main()
 		p[i].set(a, b);
 	}
 	for(i = 0; i < 3; ++i)	p[i].display();
+	system("pause");
 	return 0;
 }

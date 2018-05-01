@@ -1,6 +1,7 @@
 #include<iostream>
 #include<mylib.h>
 #include<iomanip>
+#include<windows.h>
 using namespace std;
 class fraction
 {
@@ -8,10 +9,16 @@ class fraction
 		int num;
 		int den;
 	public:
-		fraction()	:	num(0), den(1)
-		{}
-		fraction(int n, int d)	:	num(n), den(d)
-		{}
+		fraction()
+		{
+			num = 0;
+			den = 1;
+		}
+		fraction(int n, int d)
+		{
+			num = n;
+			den = d;
+		}
 		int getnum()	{return num;}
 		int getden()	{return den;}
 		void setf(int a, int b)
@@ -23,18 +30,24 @@ class fraction
 				den = b;
 		}
 		void display();
-		void add(fraction, fraction);
-		void sub(fraction, fraction);
 		void mul(fraction, fraction);
-		void div(fraction, fraction);
 		void lowterms();
 };
 int main()
 {
 	int a, i, j;
 	fraction f1;
-	cout << "Enter denomination: ";
-	cin >> a;
+	do
+	{
+		cout << "Enter denomination: ";
+		cin >> a;
+		if (a <= 0)
+		{
+			cout << "Denominator must greater than 0!!";
+			Sleep(1500);
+			system("cls");
+		}
+	}while(a <= 0);
 	fraction multiply[a - 2];
 	gotoxy(7, 2);
 	for(i = 0; i < a - 1; ++i)
@@ -44,7 +57,7 @@ int main()
 		multiply[i].display();
 	}
 	cout << endl;
-	for(i = 0; i < a; ++i)	cout << "-------";
+	for(i = 0; i < a; ++i)	cout << "--------";
 	cout << endl;
 	for(i = 0; i < a - 1; ++i)
 	{
@@ -57,6 +70,7 @@ int main()
 		}
 		cout << endl;
 	}
+	system("pause");
 	return 0;
 }
 void fraction::display()

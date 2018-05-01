@@ -5,18 +5,18 @@ class Int
 	private:
 		int num;
 	public:
-		Int(): num(0)
-		{}
-		Int(int number): num(number)
-		{}
+		Int()
+		{
+			num = 0;
+		}
+		Int(int number)
+		{
+			num = number;
+		}
 		void setnum(int x);
 		int getnum()
 		{
 			return num;
-		}
-		void shownum()
-		{
-			cout << num << endl;
 		}
 		Int add(Int);
 //		~Int(){
@@ -41,7 +41,7 @@ int main()
 	cout << "Enter second number: ";	cin >> b;
 	num2.setnum(b);
 	sum = num1.add(num2);
-	cout << "Result of addition between two number: ";	sum.shownum();
+	cout << "Result of addition between two number: " << sum.getnum() << endl;
 	system("pause");
 	return 0;
 }

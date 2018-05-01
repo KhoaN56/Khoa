@@ -1,7 +1,6 @@
 #include<iostream>
 #include<windows.h>
 using namespace std;
-//Sai vi cho phep nhap du lieu truc tiep vao class
 class date
 {
 	private:

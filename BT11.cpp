@@ -8,10 +8,16 @@ class fraction
 		int num;
 		int den;
 	public:
-		fraction()	:	num(0), den(1)
-		{}
-		fraction(int n, int d)	:	num(n), den(d)
-		{}
+		fraction()
+		{
+			num = 0;
+			den = 1;
+		}
+		fraction(int n, int d)
+		{
+			num = n;
+			den = d;
+		}
 		int getnum()	{return num;}
 		int getden()	{return den;}
 		void setf(int a, int b)
@@ -31,54 +37,13 @@ class fraction
 };
 int main()
 {
-	int a, b, p, q;
+	int a, b;
 	fraction x, y, z;
 	char d, cf, c;
 	do
 	{
-		cout << "Enter mathematical operation of fraction: ";
-		cin >> a >> d >> b >> c >> p >> d >> q;
-		if(b == 0 || q == 0)
-		{
-			cout << "The denomination must not equals 0" << endl;
-			Sleep(1500);
-			continue;
-		}
-		x.setf(a, b);	y.setf(p, q);
-		switch (c)
-		{
-			case '+':
-				z.add(x, y);
-				z.lowterms();
-				x.display();	cout << " " << c << " ";	y.display(); cout << " = ";	
-				z.display();
-				break;
-			case '-':
-				z.sub(x, y);
-				z.lowterms();
-				x.display();	cout << " " << c << " ";	y.display(); cout << " = ";	
-				z.display();
-				break;
-			case 'x':
-				z.mul(x, y);
-				z.lowterms();
-				x.display();	cout << " " << c << " ";	y.display(); cout << " = ";	
-				z.display();
-				break;
-			case '*':
-				z.mul(x, y);
-				z.lowterms();
-				x.display();	cout << " " << c << " ";	y.display(); cout << " = ";	
-				z.display();
-				break;
-			case '/':
-				z.div(x, y);
-				z.lowterms();
-				x.display();	cout << " " << c << " ";	y.display(); cout << " = ";	
-				z.display();
-				break;
-		}
-	/*	cout << "Enter fraction 1: ";
+		system("cls");
+		cout << "Enter fraction 1: ";
 		cin >> a >> d >> b;
 		if(b == 0)
 		{
@@ -117,11 +82,11 @@ int main()
 		z.div(x, y);
 		z.lowterms();
 		z.display();
-		cout << endl;*/
+		cout << endl;
 		cout << "\nDo you want to continue?(y/n) ";
 		cin >> cf;
-		system("cls");
 	}while(cf == 'y');
+	system("cls");
 	cout << "Thank you! See you again!" << endl;
 	system("pause");
 	return 0;

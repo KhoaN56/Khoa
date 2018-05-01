@@ -39,6 +39,12 @@ int main()
 		cin >> a;
 		cout << "Enter minutes: ";
 		cin >> m;
+		if (m < 0)
+		{
+			cout << "Minute must not be a negative!!";
+			Sleep(1500);
+			continue;
+		}
 		if(m > 60)
 		{
 			cout << "Minute must smaller than 60!!";
@@ -47,6 +53,14 @@ int main()
 		}
 		cout << "Enter direction: ";
 		cin >> d;
+		if(d != 'W' || d != 'E' || d != 'S' || d != 'N' 
+		|| ((d == 'S' || d == 'N') && (a < 0 || a >90)) 
+		|| ((d == 'E' || d == 'W') && (a < 0 || a >180)))
+		{
+			cout << "Cordinate entered is not available!! Please try again!!";
+			Sleep(1500);
+			continue;
+		}
 		x.set_angle(a, m, d);
 		cout << "Your coordinate: ";
 		x.show_angle();

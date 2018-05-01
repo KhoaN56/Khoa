@@ -31,13 +31,13 @@ class ship
 {
 	private:
 		static unsigned int count;
-		unsigned int num_of_ship;
+		unsigned int serial_num;
 		angle longitude, latitude;
 	public:
 		ship()
 		{
 			++count;
-			num_of_ship = count;
+			serial_num = count;
 		}
 		void input_pos(angle longi, angle lati)
 		{
@@ -46,9 +46,9 @@ class ship
 		}
 		void report()
 		{
-			cout << "Number of ship is: " << num_of_ship << endl;
+			cout << "Number of ship is: " << serial_num << endl;
 			cout << "Coordinate of ship is: "; 
-			longitude.show_angle(); cout << ","; latitude.show_angle();
+			longitude.show_angle(); cout << " , "; latitude.show_angle();
 			cout << endl;
 		}
 };
@@ -132,5 +132,6 @@ int main()
 	s[i--].report();
 	s[i--].report();
 	s[i].report();
+	system("pause");
 	return 0;
 }

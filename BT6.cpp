@@ -6,7 +6,6 @@
 using namespace std;
 class date
 {
-	//Sai vi cho phep nguoi dung nhap du lieu truc tiep vao class
 	private:
 		int month;
 		int day;

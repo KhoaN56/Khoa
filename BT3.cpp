@@ -58,7 +58,7 @@ class time
 };
 int main()
 {
-	time t1(12,23,24), t2(13,24,50);
+	const time t1(12,23,24), t2(13,24,50);
 	time t3;
 	t3 = t1.add(t2);
 	t3.display();
